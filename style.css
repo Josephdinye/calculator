@@ -94,3 +94,35 @@ button:active {
   grid-column: span 2;
 }
 
+/* 📱 Mobile phones */
+@media (max-width: 600px) {
+  .win-calculator {
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  button {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  #screen {
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .title-bar {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+}
+button {
+  touch-action: manipulation;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
