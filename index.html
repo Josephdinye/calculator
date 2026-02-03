@@ -72,6 +72,42 @@ function calculate() {
     screen.value = "Error";
   }
 }
+  document.addEventListener("keydown", function (event) {
+  const key = event.key;
+
+  // Numbers
+  if (!isNaN(key)) {
+    append(key);
+  }
+
+  // Operators
+  else if (key === "+") append("+");
+  else if (key === "-") append("-");
+  else if (key === "*") append("*");
+  else if (key === "/") append("/");
+  else if (key === ".") append(".");
+
+  // Parentheses
+  else if (key === "(") append("(");
+  else if (key === ")") append(")");
+
+  // Enter = calculate
+  else if (key === "Enter") {
+    event.preventDefault();
+    calculate();
+  }
+
+  // Backspace = delete
+  else if (key === "Backspace") {
+    deleteLast();
+  }
+
+  // Escape = clear
+  else if (key === "Escape") {
+    clearScreen();
+  }
+});
+
 
 </script>
 </body>
