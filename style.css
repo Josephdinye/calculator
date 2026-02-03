@@ -1,67 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1f2933, #0b0f14);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calculator {
-  background: #111;
+  width: 340px;
+  background: #0f172a;
   padding: 20px;
   border-radius: 20px;
-  width: 330px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
-.display input {
+#screen {
   width: 100%;
   height: 60px;
-  background: #000;
-  color: #0f0;
-  font-size: 24px;
-  text-align: right;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
   margin-bottom: 15px;
+  background: #020617;
+  color: #22c55e;
+  border: none;
+  border-radius: 12px;
+  font-size: 26px;
+  padding: 10px 14px;
+  text-align: right;
+  letter-spacing: 1px;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 button {
   height: 55px;
+  border-radius: 14px;
   border: none;
-  border-radius: 12px;
   font-size: 16px;
+  background: #1e293b;
+  color: #e5e7eb;
   cursor: pointer;
-  background: #222;
-  color: white;
-  transition: 0.2s;
+  transition: all 0.15s ease;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.4);
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  background: #334155;
 }
 
+button:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* Operators */
 .operator {
-  background: #ff9500;
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  color: #020617;
 }
 
+.operator:hover {
+  background: linear-gradient(135deg, #fdba74, #fb923c);
+}
+
+/* Functions */
 .function {
-  background: #555;
+  background: #475569;
 }
 
 .equal {
-  background: #34c759;
-  grid-row: span 2;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #022c22;
+  font-size: 20px;
 }
 
+/* Wide zero */
 .zero {
   grid-column: span 2;
 }
+
